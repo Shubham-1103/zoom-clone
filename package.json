@@ -1,0 +1,20 @@
+{
+  "name": "zoom-clone",
+  "version": "1.0.0",
+  "description": "this is the clone of zoom application just for learning purpose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shubham-1103/zoom-clone.git"
+  },
+  "author": "Shubham Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shubham-1103/zoom-clone/issues"
+  },
+  "homepage": "https://github.com/Shubham-1103/zoom-clone#readme"
+}
