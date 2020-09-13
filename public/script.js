@@ -8,7 +8,7 @@ const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   path: '/peerjs',
   host: '/',
-  port: '443'
+  port: '3030'
 })
 
 let myVideoStream;
@@ -113,7 +113,6 @@ const muteUnmute = () => {
 
 //Utility method to play and stop the user video
 const playStop = () => {
-  console.log('object')
   let enabled = myVideoStream.getVideoTracks()[0].enabled;
   if (enabled) {
     myVideoStream.getVideoTracks()[0].enabled = false;
