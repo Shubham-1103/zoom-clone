@@ -42,4 +42,4 @@ io.on('connection', socket=>{
 app.set('view engine', 'ejs');
 
 
-server.listen(3030);
+server.listen(process.env.PORT||3030);
