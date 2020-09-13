@@ -13,6 +13,9 @@ app.use(express.static('public'));
 
 app.use('/peerjs', peerServer); 
 
+// to render the html we need view engine which is ejs in our case
+app.set('view engine', 'ejs');
+
 //redirection to random uuid
 app.get('/',(req, res)=>{
     res.redirect(`/${uuidv4()}`);
@@ -33,13 +36,11 @@ io.on('connection', socket=>{
         socket.to(roomId).broadcast.emit('user-connected', userId);
         socket.on('message', message=>{
             io.to(roomId).emit('createMessage', message)
+        });
+        socket.on('disconnect', () => {
+            socket.to(roomId).broadcast.emit('user-disconnected', userId)
         })
-
     })
 })
-
-// to render the html we need view engine which is ejs in our case
-app.set('view engine', 'ejs');
-
 
 server.listen(process.env.PORT||3030);
